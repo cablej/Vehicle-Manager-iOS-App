@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D15440FF1B755B7A00260E28 /* VehicleManageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */; };
+		D15441011B75656200260E28 /* VehiclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15441001B75656200260E28 /* VehiclesTableViewController.swift */; };
+		D15441031B758E1D00260E28 /* CalenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15441021B758E1D00260E28 /* CalenderTableViewController.swift */; };
+		D15441051B75909700260E28 /* CalenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15441041B75909700260E28 /* CalenderTableViewCell.swift */; };
+		D16C4F531B76F77C006A674C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C4F521B76F77C006A674C /* SettingsTableViewController.swift */; };
 		D19EA70E1B75368E00F55208 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA70D1B75368E00F55208 /* AppDelegate.swift */; };
-		D19EA7101B75368E00F55208 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA70F1B75368E00F55208 /* FirstViewController.swift */; };
-		D19EA7121B75368E00F55208 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7111B75368E00F55208 /* SecondViewController.swift */; };
 		D19EA7151B75368E00F55208 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19EA7131B75368E00F55208 /* Main.storyboard */; };
 		D19EA7171B75368E00F55208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19EA7161B75368E00F55208 /* Assets.xcassets */; };
 		D19EA71A1B75368E00F55208 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19EA7181B75368E00F55208 /* LaunchScreen.storyboard */; };
 		D19EA7251B75368E00F55208 /* Vehicle_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7241B75368E00F55208 /* Vehicle_ManagerTests.swift */; };
 		D19EA7301B75368E00F55208 /* Vehicle_ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA72F1B75368E00F55208 /* Vehicle_ManagerUITests.swift */; };
+		D19EA73E1B7536DB00F55208 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA73D1B7536DB00F55208 /* ReservationViewController.swift */; };
+		D19EA7431B75373800F55208 /* ServerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7421B75373800F55208 /* ServerHelper.swift */; };
+		D19EA7451B7537EB00F55208 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7441B7537EB00F55208 /* SwiftyJSON.swift */; };
+		D19EA7471B75390500F55208 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7461B75390500F55208 /* Reservation.swift */; };
+		D19EA7491B753BEF00F55208 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */; };
+		D19EA74B1B7544A700F55208 /* AddReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA74A1B7544A700F55208 /* AddReservationViewController.swift */; };
+		D19EA74E1B7548FD00F55208 /* SelectVehicleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA74D1B7548FD00F55208 /* SelectVehicleTableViewController.swift */; };
+		D1F9C6891B7558E40056EA03 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleManageHelper.swift; sourceTree = "<group>"; };
+		D15441001B75656200260E28 /* VehiclesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewController.swift; sourceTree = "<group>"; };
+		D15441021B758E1D00260E28 /* CalenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewController.swift; sourceTree = "<group>"; };
+		D15441041B75909700260E28 /* CalenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewCell.swift; sourceTree = "<group>"; };
+		D16C4F521B76F77C006A674C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D19EA70A1B75368E00F55208 /* Vehicle Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19EA70D1B75368E00F55208 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D19EA70F1B75368E00F55208 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D19EA7111B75368E00F55208 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D19EA7141B75368E00F55208 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D19EA7161B75368E00F55208 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D19EA7191B75368E00F55208 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +63,14 @@
 		D19EA72B1B75368E00F55208 /* Vehicle ManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vehicle ManagerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19EA72F1B75368E00F55208 /* Vehicle_ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle_ManagerUITests.swift; sourceTree = "<group>"; };
 		D19EA7311B75368E00F55208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19EA73D1B7536DB00F55208 /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservationViewController.swift; path = ../ReservationViewController.swift; sourceTree = "<group>"; };
+		D19EA7421B75373800F55208 /* ServerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerHelper.swift; sourceTree = "<group>"; };
+		D19EA7441B7537EB00F55208 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D19EA7461B75390500F55208 /* Reservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		D19EA74A1B7544A700F55208 /* AddReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReservationViewController.swift; sourceTree = "<group>"; };
+		D19EA74D1B7548FD00F55208 /* SelectVehicleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVehicleTableViewController.swift; sourceTree = "<group>"; };
+		D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +121,10 @@
 		D19EA70C1B75368E00F55208 /* Vehicle Manager */ = {
 			isa = PBXGroup;
 			children = (
+				D19EA7411B75371A00F55208 /* Helper Classes */,
+				D19EA7401B75371600F55208 /* Objects */,
+				D19EA73F1B75370A00F55208 /* ViewControllers */,
 				D19EA70D1B75368E00F55208 /* AppDelegate.swift */,
-				D19EA70F1B75368E00F55208 /* FirstViewController.swift */,
-				D19EA7111B75368E00F55208 /* SecondViewController.swift */,
 				D19EA7131B75368E00F55208 /* Main.storyboard */,
 				D19EA7161B75368E00F55208 /* Assets.xcassets */,
 				D19EA7181B75368E00F55208 /* LaunchScreen.storyboard */,
@@ -126,6 +149,48 @@
 				D19EA7311B75368E00F55208 /* Info.plist */,
 			);
 			path = "Vehicle ManagerUITests";
+			sourceTree = "<group>";
+		};
+		D19EA73F1B75370A00F55208 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D19EA74C1B7548E200F55208 /* AddReservation */,
+				D19EA73D1B7536DB00F55208 /* ReservationViewController.swift */,
+				D16C4F521B76F77C006A674C /* SettingsTableViewController.swift */,
+				D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */,
+				D15441001B75656200260E28 /* VehiclesTableViewController.swift */,
+				D15441021B758E1D00260E28 /* CalenderTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D19EA7401B75371600F55208 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D19EA7461B75390500F55208 /* Reservation.swift */,
+				D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */,
+				D15441041B75909700260E28 /* CalenderTableViewCell.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		D19EA7411B75371A00F55208 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D19EA7421B75373800F55208 /* ServerHelper.swift */,
+				D19EA7441B7537EB00F55208 /* SwiftyJSON.swift */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		D19EA74C1B7548E200F55208 /* AddReservation */ = {
+			isa = PBXGroup;
+			children = (
+				D19EA74A1B7544A700F55208 /* AddReservationViewController.swift */,
+				D19EA74D1B7548FD00F55208 /* SelectVehicleTableViewController.swift */,
+				D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */,
+			);
+			name = AddReservation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +323,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D19EA7121B75368E00F55208 /* SecondViewController.swift in Sources */,
+				D19EA74E1B7548FD00F55208 /* SelectVehicleTableViewController.swift in Sources */,
 				D19EA70E1B75368E00F55208 /* AppDelegate.swift in Sources */,
-				D19EA7101B75368E00F55208 /* FirstViewController.swift in Sources */,
+				D19EA73E1B7536DB00F55208 /* ReservationViewController.swift in Sources */,
+				D15441031B758E1D00260E28 /* CalenderTableViewController.swift in Sources */,
+				D1F9C6891B7558E40056EA03 /* SelectDateViewController.swift in Sources */,
+				D15441051B75909700260E28 /* CalenderTableViewCell.swift in Sources */,
+				D16C4F531B76F77C006A674C /* SettingsTableViewController.swift in Sources */,
+				D19EA7491B753BEF00F55208 /* ReservationTableViewCell.swift in Sources */,
+				D15440FF1B755B7A00260E28 /* VehicleManageHelper.swift in Sources */,
+				D15441011B75656200260E28 /* VehiclesTableViewController.swift in Sources */,
+				D19EA7471B75390500F55208 /* Reservation.swift in Sources */,
+				D19EA7431B75373800F55208 /* ServerHelper.swift in Sources */,
+				D19EA7451B7537EB00F55208 /* SwiftyJSON.swift in Sources */,
+				D19EA74B1B7544A700F55208 /* AddReservationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Vehicle Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Cable.cable.Vehicle-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Vehicle Manager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Cable.cable.Vehicle-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +565,7 @@
 				D19EA7361B75368E00F55208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D19EA7371B75368E00F55208 /* Build configuration list for PBXNativeTarget "Vehicle ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +574,7 @@
 				D19EA7391B75368E00F55208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D19EA73A1B75368E00F55208 /* Build configuration list for PBXNativeTarget "Vehicle ManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +583,7 @@
 				D19EA73C1B75368E00F55208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
