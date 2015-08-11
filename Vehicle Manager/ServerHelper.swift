@@ -61,6 +61,25 @@ class ServerHelper: NSObject {
         }
     }
     
+    class func getSchools(success: ((schoolArray: [String]?) -> Void)) {
+        ServerHelper.sendRequest(REQUEST_URL, postString:"action=GetSchools") {
+            response in
+            
+            if let error = ServerHelper.error(response) {
+                print(error)
+                return
+            }
+            
+            if let responseJSON = ServerHelper.stringToJSON(response) {
+                var schools: [String] = []
+                for school in responseJSON {
+                    schools.append(school.1["name"].stringValue)
+                }
+                success(schoolArray: schools)
+            }
+        }
+    }
+    
     func reservationObjectFromJSON(json: JSON) -> Reservation {
         let reservation = Reservation(vehicleName: json["vehicleName"].stringValue, owner: json["owner"].stringValue, startTime: json["startTime"].intValue, endTime: json["endTime"].intValue)
         return reservation

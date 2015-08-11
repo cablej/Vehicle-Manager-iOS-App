@@ -28,6 +28,16 @@ class VehicleManageHelper: NSObject {
         return dateFormatter.stringFromDate(date)
     }
     
+    
+    class func alert(title: String, message: String, viewController: UIViewController) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        viewController.presentViewController(alert, animated: true, completion: nil)
+        return
+    }
+    
     class func formatMonthDay(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd"

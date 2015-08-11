@@ -27,6 +27,8 @@ class CalenderTableViewController: UITableViewController {
         self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView!.addSubview(refreshControl!)
         
+        
+        
     }
     
     func refresh(sender:AnyObject)
@@ -46,6 +48,14 @@ class CalenderTableViewController: UITableViewController {
 
     
     override func viewWillAppear(animated: Bool) {
+        if defaults.objectForKey("lastName") == nil || defaults.objectForKey("email") == nil || defaults.objectForKey("school") == nil || defaults.objectForKey("lastName") as? String == "" || defaults.objectForKey("email") as? String == "" {
+            performSegueWithIdentifier("DisplayLogin", sender: self)
+            return
+        }
+        if defaults.objectForKey("hasOpenedFirstTime") == nil {
+            defaults.setObject(true, forKey: "hasOpenedFirstTime")
+            VehicleManageHelper.alert("Welcome", message: "Select a vehicle to begin your reservation.", viewController: self)
+        }
         updateReservations()
         updateVehicles()
     }

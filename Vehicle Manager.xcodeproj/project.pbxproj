@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D123630B1B793A5000EDE382 /* SelectSchoolTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123630A1B793A5000EDE382 /* SelectSchoolTableViewController.swift */; };
 		D15440FF1B755B7A00260E28 /* VehicleManageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */; };
 		D15441011B75656200260E28 /* VehiclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15441001B75656200260E28 /* VehiclesTableViewController.swift */; };
 		D15441031B758E1D00260E28 /* CalenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15441021B758E1D00260E28 /* CalenderTableViewController.swift */; };
@@ -25,6 +26,9 @@
 		D19EA7491B753BEF00F55208 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */; };
 		D19EA74B1B7544A700F55208 /* AddReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA74A1B7544A700F55208 /* AddReservationViewController.swift */; };
 		D19EA74E1B7548FD00F55208 /* SelectVehicleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EA74D1B7548FD00F55208 /* SelectVehicleTableViewController.swift */; };
+		D1BDE48F1B7985D10037D862 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDE48E1B7985D10037D862 /* LogInViewController.swift */; };
+		D1C79A631B7981CC003757FC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C79A621B7981CC003757FC /* TabBarViewController.swift */; };
+		D1CC5FEF1B793F84002C6E04 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC5FEE1B793F84002C6E04 /* HelpViewController.swift */; };
 		D1F9C6891B7558E40056EA03 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,12 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D123630A1B793A5000EDE382 /* SelectSchoolTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSchoolTableViewController.swift; sourceTree = "<group>"; };
 		D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleManageHelper.swift; sourceTree = "<group>"; };
 		D15441001B75656200260E28 /* VehiclesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewController.swift; sourceTree = "<group>"; };
 		D15441021B758E1D00260E28 /* CalenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewController.swift; sourceTree = "<group>"; };
 		D15441041B75909700260E28 /* CalenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewCell.swift; sourceTree = "<group>"; };
 		D16C4F521B76F77C006A674C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		D19EA70A1B75368E00F55208 /* Vehicle Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vehicle Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19EA70A1B75368E00F55208 /* D214 Vehicles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D214 Vehicles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19EA70D1B75368E00F55208 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D19EA7141B75368E00F55208 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D19EA7161B75368E00F55208 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +75,9 @@
 		D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		D19EA74A1B7544A700F55208 /* AddReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReservationViewController.swift; sourceTree = "<group>"; };
 		D19EA74D1B7548FD00F55208 /* SelectVehicleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVehicleTableViewController.swift; sourceTree = "<group>"; };
+		D1BDE48E1B7985D10037D862 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D1C79A621B7981CC003757FC /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D1CC5FEE1B793F84002C6E04 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +119,7 @@
 		D19EA70B1B75368E00F55208 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D19EA70A1B75368E00F55208 /* Vehicle Manager.app */,
+				D19EA70A1B75368E00F55208 /* D214 Vehicles.app */,
 				D19EA7201B75368E00F55208 /* Vehicle ManagerTests.xctest */,
 				D19EA72B1B75368E00F55208 /* Vehicle ManagerUITests.xctest */,
 			);
@@ -160,6 +168,10 @@
 				D15440FE1B755B7A00260E28 /* VehicleManageHelper.swift */,
 				D15441001B75656200260E28 /* VehiclesTableViewController.swift */,
 				D15441021B758E1D00260E28 /* CalenderTableViewController.swift */,
+				D123630A1B793A5000EDE382 /* SelectSchoolTableViewController.swift */,
+				D1CC5FEE1B793F84002C6E04 /* HelpViewController.swift */,
+				D1C79A621B7981CC003757FC /* TabBarViewController.swift */,
+				D1BDE48E1B7985D10037D862 /* LogInViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -210,7 +222,7 @@
 			);
 			name = "Vehicle Manager";
 			productName = "Vehicle Manager";
-			productReference = D19EA70A1B75368E00F55208 /* Vehicle Manager.app */;
+			productReference = D19EA70A1B75368E00F55208 /* D214 Vehicles.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D19EA71F1B75368E00F55208 /* Vehicle ManagerTests */ = {
@@ -323,7 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D123630B1B793A5000EDE382 /* SelectSchoolTableViewController.swift in Sources */,
 				D19EA74E1B7548FD00F55208 /* SelectVehicleTableViewController.swift in Sources */,
+				D1BDE48F1B7985D10037D862 /* LogInViewController.swift in Sources */,
 				D19EA70E1B75368E00F55208 /* AppDelegate.swift in Sources */,
 				D19EA73E1B7536DB00F55208 /* ReservationViewController.swift in Sources */,
 				D15441031B758E1D00260E28 /* CalenderTableViewController.swift in Sources */,
@@ -331,8 +345,10 @@
 				D15441051B75909700260E28 /* CalenderTableViewCell.swift in Sources */,
 				D16C4F531B76F77C006A674C /* SettingsTableViewController.swift in Sources */,
 				D19EA7491B753BEF00F55208 /* ReservationTableViewCell.swift in Sources */,
+				D1C79A631B7981CC003757FC /* TabBarViewController.swift in Sources */,
 				D15440FF1B755B7A00260E28 /* VehicleManageHelper.swift in Sources */,
 				D15441011B75656200260E28 /* VehiclesTableViewController.swift in Sources */,
+				D1CC5FEF1B793F84002C6E04 /* HelpViewController.swift in Sources */,
 				D19EA7471B75390500F55208 /* Reservation.swift in Sources */,
 				D19EA7431B75373800F55208 /* ServerHelper.swift in Sources */,
 				D19EA7451B7537EB00F55208 /* SwiftyJSON.swift in Sources */,
@@ -482,7 +498,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Cable.cable.Vehicle-Manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "D214 Vehicles";
 			};
 			name = Debug;
 		};
@@ -494,7 +510,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Cable.cable.Vehicle-Manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "D214 Vehicles";
 			};
 			name = Release;
 		};

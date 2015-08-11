@@ -37,7 +37,7 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
         let endTimeStamp = endDatePicker.date.timeIntervalSince1970
         
         if defaults.objectForKey("lastName") == nil || defaults.objectForKey("email") == nil || defaults.objectForKey("school") == nil {
-            alert("Settings not entered", message: "You have not entered your information in settings. Please edit your settings and return.")
+            VehicleManageHelper.alert("Settings not entered", message: "You have not entered your information in settings. Please edit your settings and return.", viewController: self)
             return
         }
         
@@ -50,27 +50,19 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
             
             if let error = ServerHelper.error(response) {
                 print(error)
+                VehicleManageHelper.alert("Error", message: error, viewController: self)
                 return
             }
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let alert = UIAlertController(title: "Success", message: "Successfully submitted your request. You will be sent an email when it is reviewed.", preferredStyle: UIAlertControllerStyle.Alert)
-                let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: { (alert) -> Void in
+                let alert = UIAlertController(title: "Success", message: "You have successfully submitted your request. You will be sent an email when it is reviewed.", preferredStyle: UIAlertControllerStyle.Alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: { (alert) -> Void in
                     self.dismissView()
                 })
                 alert.addAction(cancelAction)
                 self.presentViewController(alert, animated: true, completion: nil)
             })
         }
-    }
-    
-    func alert(title: String, message: String) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let cancelAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
-        alert.addAction(cancelAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-        return
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {

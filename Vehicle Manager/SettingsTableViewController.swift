@@ -14,7 +14,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet var emailTextField: UITextField!
     
-    @IBOutlet var schoolNameTextField: UITextField!
+    @IBOutlet var schoolLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +25,19 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         
         lastNameTextField.delegate = self
         emailTextField.delegate = self
-        schoolNameTextField.delegate = self
         
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        if defaults.objectForKey("lastName") == nil || defaults.objectForKey("email") == nil || defaults.objectForKey("school") == nil {
+            return
+        }
+        
         lastNameTextField.text = defaults.objectForKey("lastName") as? String
         emailTextField.text = defaults.objectForKey("email") as? String
-        schoolNameTextField.text = defaults.objectForKey("school") as? String
+        let str : String = "School: " + (defaults.objectForKey("school") as! String)
+        schoolLabel.text = str
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -43,10 +48,18 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func onSaveButtonTapped(sender: AnyObject) {
         defaults.setObject(lastNameTextField.text, forKey: "lastName")
         defaults.setObject(emailTextField.text, forKey: "email")
-        defaults.setObject(schoolNameTextField.text, forKey: "school")
+        //defaults.setObject(schoolNameTextField.text, forKey: "school")
         lastNameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
-        schoolNameTextField.resignFirstResponder()
+        //schoolNameTextField.resignFirstResponder()
     }
 
+    @IBAction func onLastNameTextFieldEnd(sender: AnyObject) {
+        defaults.setObject(lastNameTextField.text, forKey: "lastName")
+    }
+    
+    @IBAction func onEmailTextFieldEnd(sender: AnyObject) {
+        defaults.setObject(emailTextField.text, forKey: "email")
+    }
+    
 }
