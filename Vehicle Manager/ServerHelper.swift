@@ -13,6 +13,7 @@ let REQUEST_URL = "http://d214mfsab.org/request.php"
 class ServerHelper: NSObject {
     
     class func sendRequest(url: String, postString: String, completionHandler : (String) -> ()){
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.HTTPMethod = "POST"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -61,7 +62,7 @@ class ServerHelper: NSObject {
         }
     }
     
-    class func getSchools(success: ((schoolArray: [String]?) -> Void)) {
+    class func getSchools(success: ((schoolArray: [School]?) -> Void)) {
         ServerHelper.sendRequest(REQUEST_URL, postString:"action=GetSchools") {
             response in
             
@@ -71,9 +72,13 @@ class ServerHelper: NSObject {
             }
             
             if let responseJSON = ServerHelper.stringToJSON(response) {
-                var schools: [String] = []
+                var schools: [School] = []
                 for school in responseJSON {
-                    schools.append(school.1["name"].stringValue)
+                    let newSchool = School()
+                    newSchool.name = school.1["name"].stringValue
+                    newSchool.primaryColor = school.1["primaryColor"].stringValue
+                    newSchool.secondaryColor = school.1["secondaryColor"].stringValue
+                    schools.append(newSchool)
                 }
                 success(schoolArray: schools)
             }

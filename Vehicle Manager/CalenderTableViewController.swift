@@ -18,8 +18,6 @@ class CalenderTableViewController: UITableViewController {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        VehicleManageHelper.initializeViewController(self)
-        
         tableView.backgroundColor = UIColor.whiteColor()
         
         
@@ -40,7 +38,7 @@ class CalenderTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let nvc = segue.destinationViewController as? UINavigationController {
             if let dvc = nvc.viewControllers.first as? AddReservationViewController {
-                dvc.vehicleName = vehicles[tableView.indexPathForSelectedRow!.row]
+                dvc.vehicleNames = [vehicles[tableView.indexPathForSelectedRow!.row]]
                 dvc.startDate = getDateForSection(tableView.indexPathForSelectedRow!.section)
             }
         }
@@ -48,6 +46,21 @@ class CalenderTableViewController: UITableViewController {
 
     
     override func viewWillAppear(animated: Bool) {
+        
+        
+        if let color = defaults.objectForKey("primaryColor") as? String {
+            if color != "" {
+                primaryColor = UIColor(rgba: "#" + color)
+            }
+        }
+        if let color = defaults.objectForKey("secondaryColor") as? String {
+            if color != "" {
+                secondaryColor = UIColor(rgba: "#" + color)
+            }
+        }
+        
+        VehicleManageHelper.initializeViewController(self)
+        
         if defaults.objectForKey("lastName") == nil || defaults.objectForKey("email") == nil || defaults.objectForKey("school") == nil || defaults.objectForKey("lastName") as? String == "" || defaults.objectForKey("email") as? String == "" {
             performSegueWithIdentifier("DisplayLogin", sender: self)
             return
@@ -56,6 +69,7 @@ class CalenderTableViewController: UITableViewController {
             defaults.setObject(true, forKey: "hasOpenedFirstTime")
             VehicleManageHelper.alert("Welcome", message: "Select a vehicle to begin your reservation.", viewController: self)
         }
+        
         updateReservations()
         updateVehicles()
     }
@@ -130,7 +144,7 @@ class CalenderTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 20))
-        headerView.backgroundColor = UIColor(red: 129/255.0, green: 166/255.0, blue: 194/255.0, alpha: 1)
+        headerView.backgroundColor = secondaryColor
         
         let headerLabel = UILabel(frame: CGRectMake(0, 1.5, headerView.frame.size.width, headerView.frame.size.height))
         

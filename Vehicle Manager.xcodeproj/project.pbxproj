@@ -30,6 +30,8 @@
 		D1C79A631B7981CC003757FC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C79A621B7981CC003757FC /* TabBarViewController.swift */; };
 		D1CC5FEF1B793F84002C6E04 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC5FEE1B793F84002C6E04 /* HelpViewController.swift */; };
 		D1F9C6891B7558E40056EA03 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */; };
+		D1FF3A441B7A45B800F00754 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF3A431B7A45B800F00754 /* School.swift */; };
+		D1FF3A461B7A470A00F00754 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF3A451B7A470A00F00754 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		D1C79A621B7981CC003757FC /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D1CC5FEE1B793F84002C6E04 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D1F9C6881B7558E40056EA03 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
+		D1FF3A431B7A45B800F00754 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		D1FF3A451B7A470A00F00754 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 				D19EA7461B75390500F55208 /* Reservation.swift */,
 				D19EA7481B753BEF00F55208 /* ReservationTableViewCell.swift */,
 				D15441041B75909700260E28 /* CalenderTableViewCell.swift */,
+				D1FF3A431B7A45B800F00754 /* School.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			children = (
 				D19EA7421B75373800F55208 /* ServerHelper.swift */,
 				D19EA7441B7537EB00F55208 /* SwiftyJSON.swift */,
+				D1FF3A451B7A470A00F00754 /* UIColorExtension.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -335,12 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FF3A441B7A45B800F00754 /* School.swift in Sources */,
 				D123630B1B793A5000EDE382 /* SelectSchoolTableViewController.swift in Sources */,
 				D19EA74E1B7548FD00F55208 /* SelectVehicleTableViewController.swift in Sources */,
 				D1BDE48F1B7985D10037D862 /* LogInViewController.swift in Sources */,
 				D19EA70E1B75368E00F55208 /* AppDelegate.swift in Sources */,
 				D19EA73E1B7536DB00F55208 /* ReservationViewController.swift in Sources */,
 				D15441031B758E1D00260E28 /* CalenderTableViewController.swift in Sources */,
+				D1FF3A461B7A470A00F00754 /* UIColorExtension.swift in Sources */,
 				D1F9C6891B7558E40056EA03 /* SelectDateViewController.swift in Sources */,
 				D15441051B75909700260E28 /* CalenderTableViewCell.swift in Sources */,
 				D16C4F531B76F77C006A674C /* SettingsTableViewController.swift in Sources */,

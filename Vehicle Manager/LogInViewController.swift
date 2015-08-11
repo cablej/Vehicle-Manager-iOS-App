@@ -14,10 +14,14 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var emailTextField: UITextField!
     
+    @IBOutlet var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         VehicleManageHelper.initializeViewController(self)
+        
+        nextButton.backgroundColor = primaryColor
         
         lastNameTextField.delegate = self
         emailTextField.delegate = self

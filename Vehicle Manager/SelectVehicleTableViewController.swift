@@ -15,10 +15,13 @@ class SelectVehicleTableViewController: UITableViewController, UISearchBarDelega
     var vehicles: [String] = []
     var filteredVehicleArray: [String] = []
     
+    var selectedVehicles: [String] = []
+    
     var parent: AddReservationViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         VehicleManageHelper.initializeViewController(self)
         
         tableView.backgroundColor = UIColor.whiteColor()
@@ -65,12 +68,41 @@ class SelectVehicleTableViewController: UITableViewController, UISearchBarDelega
         } else {
             cell.textLabel?.text = vehicles[indexPath.row]
         }
+        
+        for vehicleName in selectedVehicles {
+            if vehicleName == cell.textLabel?.text {
+                cell.accessoryType = .Checkmark
+            }
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None;
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        parent.updateVehicle(filteredVehicleArray[indexPath.row])
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        if cell?.accessoryType == .Checkmark {
+            cell?.accessoryType = .None
+        } else {
+            cell?.accessoryType = .Checkmark
+        }
+    }
+    
+    @IBAction func onDoneButtonTapped(sender: AnyObject) {
+        var vehicleNames: [String] = []
+        for(var i=0; i<tableView.numberOfRowsInSection(0); i++) {
+            let cellPath = NSIndexPath(forRow: i, inSection: 0)
+            let cell = tableView.cellForRowAtIndexPath(cellPath)
+            if cell?.accessoryType == .Checkmark {
+                vehicleNames.append(filteredVehicleArray[i])
+            }
+        }
+        if vehicleNames.count < 0 {
+            VehicleManageHelper.alert("Please select at least one vehicle.", message: "Please select at least one vehicle.", viewController: self)
+            return
+        }
+        parent.updateVehicles(vehicleNames)
         dismissView()
     }
     

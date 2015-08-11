@@ -12,8 +12,8 @@ class SelectSchoolTableViewController: UITableViewController, UISearchBarDelegat
     
     @IBOutlet var schoolSearchBar: UISearchBar!
     
-    var schools: [String] = []
-    var filteredSchoolArray: [String] = []
+    var schools: [School] = []
+    var filteredSchoolArray: [School] = []
     
     var parentLogInViewController: LogInViewController? = nil
     
@@ -57,16 +57,19 @@ class SelectSchoolTableViewController: UITableViewController, UISearchBarDelegat
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "")
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            cell.textLabel?.text = filteredSchoolArray[indexPath.row]
+            cell.textLabel?.text = filteredSchoolArray[indexPath.row].name
         } else {
-            cell.textLabel?.text = schools[indexPath.row]
+            cell.textLabel?.text = schools[indexPath.row].name
         }
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        defaults.setObject(filteredSchoolArray[indexPath.row], forKey: "school")
+        let school = filteredSchoolArray[indexPath.row]
+        defaults.setObject(school.name, forKey: "school")
+        defaults.setObject(school.primaryColor, forKey: "primaryColor")
+        defaults.setObject(school.secondaryColor, forKey: "secondaryColor")
         if parentLogInViewController != nil {
             parentLogInViewController!.dismissView()
         }
@@ -74,8 +77,8 @@ class SelectSchoolTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     func filterContentForSearchText(searchText: String) {
-        self.filteredSchoolArray = schools.filter({(name: String) -> Bool in
-            let stringMatch = name.rangeOfString(searchText)
+        self.filteredSchoolArray = schools.filter({(school: School) -> Bool in
+            let stringMatch = school.name.rangeOfString(searchText)
             return (stringMatch != nil)
         })
     }

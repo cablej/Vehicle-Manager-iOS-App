@@ -9,13 +9,13 @@
         <!--Reservations-->
         <scene sceneID="IyR-vH-81r">
             <objects>
-                <tableViewController id="sdw-lT-2X3" customClass="ReservationTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="sdw-lT-2X3" customClass="ReservationTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" id="cwM-fD-Azi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservationCell" rowHeight="97" id="ZJB-Ts-4mU" customClass="ReservationTableViewCell" customModule="Vehicle_Manager" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservationCell" rowHeight="97" id="ZJB-Ts-4mU" customClass="ReservationTableViewCell" customModule="D214_Vehicles" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZJB-Ts-4mU" id="0gr-dT-AMb">
@@ -88,7 +88,7 @@
         <!--Request Reservation-->
         <scene sceneID="hBu-ME-ou2">
             <objects>
-                <viewController id="MnX-72-XXU" customClass="AddReservationViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MnX-72-XXU" customClass="AddReservationViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lzA-WA-Sbb"/>
                         <viewControllerLayoutGuide type="bottom" id="4sw-E4-5db"/>
@@ -98,20 +98,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkT-N6-fwJ">
-                                <rect key="frame" x="269" y="74" width="61" height="21"/>
+                                <rect key="frame" x="269" y="74" width="60.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29N-bM-qyv">
-                                <rect key="frame" x="246" y="103" width="108" height="30"/>
-                                <state key="normal" title="Change Vehicle"/>
+                                <rect key="frame" x="219" y="102" width="162" height="30"/>
+                                <state key="normal" title="Select multiple vehicles"/>
                                 <connections>
                                     <segue destination="5zU-8y-9rN" kind="presentation" id="Kgq-bf-BKz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date and time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ls-sp-ezX">
-                                <rect key="frame" x="224" y="141" width="152" height="21"/>
+                                <rect key="frame" x="224" y="140" width="151.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -193,7 +193,7 @@
         <!--Select date-->
         <scene sceneID="abg-R5-s0V">
             <objects>
-                <viewController id="DXn-LQ-TzQ" customClass="SelectDateViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DXn-LQ-TzQ" customClass="SelectDateViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v12-Lf-bqm"/>
                         <viewControllerLayoutGuide type="bottom" id="FOL-44-RVW"/>
@@ -234,13 +234,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCb-xI-39L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6368" y="227"/>
+            <point key="canvasLocation" x="5336" y="2315"/>
         </scene>
-        <!--Select Vehicle-->
+        <!--Select Vehicles-->
         <scene sceneID="aL9-QS-XkD">
             <objects>
-                <tableViewController id="RRK-Rz-iMS" customClass="SelectVehicleTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eyN-W9-L5Z">
+                <tableViewController id="RRK-Rz-iMS" customClass="SelectVehicleTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eyN-W9-L5Z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -253,7 +253,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VehicleCell" id="LWj-4e-adq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VehicleCell" editingAccessoryType="checkmark" id="LWj-4e-adq">
                                 <rect key="frame" x="0.0" y="130" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWj-4e-adq" id="UYW-Ug-mAB">
@@ -267,10 +267,15 @@
                             <outlet property="delegate" destination="RRK-Rz-iMS" id="pD3-Uq-gtM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Vehicle" id="1gF-OH-HWv">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="f9H-xM-zD1">
+                    <navigationItem key="navigationItem" title="Select Vehicles" id="1gF-OH-HWv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="f9H-xM-zD1">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="RRK-Rz-iMS" id="ZRR-Ex-vSA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Choose" systemItem="done" id="Mvt-o4-wpU">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="RRK-Rz-iMS" id="D5H-fP-WYM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -295,7 +300,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -309,12 +314,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1624" y="0.0"/>
+            <point key="canvasLocation" x="1632" y="32"/>
         </scene>
         <!--Vehicles-->
         <scene sceneID="3Mo-C4-mYI">
             <objects>
-                <tableViewController id="wIq-KG-rkv" customClass="VehiclesTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="wIq-KG-rkv" customClass="VehiclesTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="V5z-iG-oFo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,18 +357,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hG1-iF-UVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="1942"/>
+            <point key="canvasLocation" x="3722" y="2326"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="jmt-Oc-ALb">
             <objects>
-                <tableViewController id="hOG-be-JZe" customClass="CalenderTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hOG-be-JZe" customClass="CalenderTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="u7q-BA-C2L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CalenderCell" rowHeight="69" id="Ghj-cL-IWo" customClass="CalenderTableViewCell" customModule="Vehicle_Manager" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CalenderCell" rowHeight="69" id="Ghj-cL-IWo" customClass="CalenderTableViewCell" customModule="D214_Vehicles" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ghj-cL-IWo" id="65g-79-YU5">
@@ -434,12 +439,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HoC-RO-f44" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="-455"/>
+            <point key="canvasLocation" x="3236" y="-959"/>
         </scene>
         <!--Help-->
         <scene sceneID="cEh-3r-B9j">
             <objects>
-                <viewController id="Bsg-Wf-i73" customClass="HelpViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bsg-Wf-i73" customClass="HelpViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kic-BM-QGD"/>
                         <viewControllerLayoutGuide type="bottom" id="cuH-Uz-5hx"/>
@@ -452,13 +457,13 @@
                                 <rect key="frame" x="20" y="72" width="560" height="163"/>
                                 <string key="text">The 'Calendar' tab is where you can see a schedule of vehicles for the year. The calendar displays when a vehicle is free or reserved. Select a vehicle on the calendar to reserve that vehicle. After you select the vehicle, you can select your starting and ending times. When you tap the 'Request' button, an email is sent to your administrator to review your request. You will be sent a confirmation email. When it is reviewed, you will be sent an email with its status, either approved or denied.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created by Jack Cable." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzl-Fc-9a9">
                                 <rect key="frame" x="20" y="243" width="273" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-Y1-STo">
@@ -478,7 +483,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This app uses icons from https://icons8.com." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9i-Xu-dTA">
                                 <rect key="frame" x="20" y="334" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -508,7 +513,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="AfX-4g-rIq">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="5JI-Ce-wl4">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="5JI-Ce-wl4">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="Bsg-Wf-i73" id="GRX-pj-azk"/>
                             </connections>
@@ -517,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3M7-SL-SaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4021" y="-455"/>
+            <point key="canvasLocation" x="4709" y="-959"/>
         </scene>
         <!--Reservations-->
         <scene sceneID="JuS-1j-2kX">
@@ -590,12 +595,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLm-LC-Coa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5616" y="227"/>
+            <point key="canvasLocation" x="4584" y="2315"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ZZi-k6-yy0">
             <objects>
-                <tableViewController id="5ON-vR-Fn5" customClass="SettingsTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5ON-vR-Fn5" customClass="SettingsTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dXn-Mc-xEq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -709,7 +714,7 @@
                                                         <constraint firstAttribute="width" constant="138" id="qoo-2a-CYa"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -750,12 +755,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6o-xS-Cky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="1487"/>
+            <point key="canvasLocation" x="1608" y="1471"/>
         </scene>
         <!--Select School-->
         <scene sceneID="dpT-r6-Hh6">
             <objects>
-                <tableViewController id="N8q-gT-KQo" customClass="SelectSchoolTableViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="N8q-gT-KQo" customClass="SelectSchoolTableViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PK7-4F-Hqj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -806,7 +811,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="661" y="2171"/>
+            <point key="canvasLocation" x="989" y="2219"/>
         </scene>
         <!--Vehicles-->
         <scene sceneID="Fcx-Y3-lzh">
@@ -825,7 +830,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaj-wf-h96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="1942"/>
+            <point key="canvasLocation" x="2824" y="2326"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="PXo-G9-std">
@@ -844,12 +849,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhd-bH-Lki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="0.0"/>
+            <point key="canvasLocation" x="2514" y="80"/>
         </scene>
         <!--District 214 Vehicle Manager-->
         <scene sceneID="OHH-oi-VTc">
             <objects>
-                <viewController id="rZc-dj-X31" customClass="LogInViewController" customModule="Vehicle_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rZc-dj-X31" customClass="LogInViewController" customModule="D214_Vehicles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Osy-Ta-G2D"/>
                         <viewControllerLayoutGuide type="bottom" id="tEQ-bX-vj7"/>
@@ -861,7 +866,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-Bk-w15">
                                 <rect key="frame" x="238" y="87" width="124" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-hE-gz4">
@@ -912,12 +917,13 @@
                     <connections>
                         <outlet property="emailTextField" destination="GZK-pc-zcN" id="ZTD-KQ-wRx"/>
                         <outlet property="lastNameTextField" destination="3ba-hE-gz4" id="gbl-jG-sHx"/>
+                        <outlet property="nextButton" destination="i6I-aK-FT7" id="bbE-hc-0U3"/>
                         <segue destination="Hyw-jC-E5O" kind="presentation" identifier="SelectSchool" id="Qc4-sc-uuI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiq-Qu-8nU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-624" y="510"/>
+            <point key="canvasLocation" x="128" y="-234"/>
         </scene>
         <!--Settings-->
         <scene sceneID="zxF-rw-cKH">
@@ -954,7 +960,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxJ-ex-uBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="2171"/>
+            <point key="canvasLocation" x="177" y="2219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MCr-w2-tof">
@@ -972,7 +978,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOi-Dt-UoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3209" y="-455"/>
+            <point key="canvasLocation" x="3897" y="-959"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ndQ-ZB-8fh">
@@ -990,7 +996,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cga-P9-pil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="510"/>
+            <point key="canvasLocation" x="-718" y="-242"/>
         </scene>
     </scenes>
     <resources>
@@ -1001,6 +1007,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KkB-F0-I2C"/>
-        <segue reference="lzu-Pc-aah"/>
+        <segue reference="Qc4-sc-uuI"/>
     </inferredMetricsTieBreakers>
 </document>

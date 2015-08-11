@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D19EA7091B75368E00F55208"
-               BuildableName = "Vehicle Manager.app"
+               BuildableName = "D214 Vehicles.app"
                BlueprintName = "Vehicle Manager"
                ReferencedContainer = "container:Vehicle Manager.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19EA7091B75368E00F55208"
-            BuildableName = "Vehicle Manager.app"
+            BuildableName = "D214 Vehicles.app"
             BlueprintName = "Vehicle Manager"
             ReferencedContainer = "container:Vehicle Manager.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19EA7091B75368E00F55208"
-            BuildableName = "Vehicle Manager.app"
+            BuildableName = "D214 Vehicles.app"
             BlueprintName = "Vehicle Manager"
             ReferencedContainer = "container:Vehicle Manager.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D19EA7091B75368E00F55208"
-            BuildableName = "Vehicle Manager.app"
+            BuildableName = "D214 Vehicles.app"
             BlueprintName = "Vehicle Manager"
             ReferencedContainer = "container:Vehicle Manager.xcodeproj">
          </BuildableReference>

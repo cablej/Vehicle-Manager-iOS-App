@@ -8,7 +8,8 @@
 
 import UIKit
 
-let TINT_COLOR = UIColor(red: 2/255.0, green: 10/255.0, blue: 117/255.0, alpha: 1)
+var primaryColor = UIColor(red: 188/255.0, green: 33/255.0, blue: 49/255.0, alpha: 1)
+var secondaryColor = UIColor(red: 42/255.0, green: 48/255.0, blue: 53/255.0, alpha: 1)
 
 let defaults = NSUserDefaults.standardUserDefaults()
 
@@ -47,8 +48,8 @@ class VehicleManageHelper: NSObject {
     
     class func initializeViewController(viewController: UIViewController) {
         if let navigationController = viewController.navigationController {
-            navigationController.navigationBar.barTintColor = TINT_COLOR
-            navigationController.toolbar.barTintColor = TINT_COLOR
+            navigationController.navigationBar.barTintColor = primaryColor
+            navigationController.toolbar.barTintColor = primaryColor
             navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
             navigationController.navigationBar.tintColor = UIColor.whiteColor()
         }

@@ -19,13 +19,15 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        VehicleManageHelper.initializeViewController(self)
-        
         tableView.backgroundColor = UIColor.whiteColor()
         
         lastNameTextField.delegate = self
         emailTextField.delegate = self
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        VehicleManageHelper.initializeViewController(self)
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -15,7 +15,7 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var startDatePicker: UIDatePicker!
     @IBOutlet var endDatePicker: UIDatePicker!
     
-    var vehicleName = ""
+    var vehicleNames: [String] = []
     var startDate: NSDate?
     var endDate: NSDate?
     
@@ -24,7 +24,7 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
         VehicleManageHelper.initializeViewController(self)
         addBarButton.enabled = false
         
-        updateVehicle(vehicleName)
+        updateVehicles(vehicleNames)
         if let date = startDate {
             startDatePicker.setDate(date, animated: false)
             endDatePicker.setDate(date, animated: false)
@@ -36,6 +36,10 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
         let startTimeStamp = startDatePicker.date.timeIntervalSince1970
         let endTimeStamp = endDatePicker.date.timeIntervalSince1970
         
+        if(vehicleNames.count == 0) {
+            VehicleManageHelper.alert("Please select at least one vehicle.", message: "Please select at least one vehicle.", viewController: self)
+        }
+        
         if defaults.objectForKey("lastName") == nil || defaults.objectForKey("email") == nil || defaults.objectForKey("school") == nil {
             VehicleManageHelper.alert("Settings not entered", message: "You have not entered your information in settings. Please edit your settings and return.", viewController: self)
             return
@@ -45,8 +49,19 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
         let email = defaults.objectForKey("email") as! String
         let school = defaults.objectForKey("school") as! String
         
-        ServerHelper.sendRequest(REQUEST_URL, postString:"action=SubmitRequest&school=\(school)&email=\(email)&vehicleName=\(vehicleName)&owner=\(lastName)&startTime=\(Int(startTimeStamp))&endTime=\(Int(endTimeStamp))") {
+        var vehiclePostNames = "&vehicleName=" + vehicleNames[0]
+        
+        if vehicleNames.count > 1 {
+            vehiclePostNames = ""
+            for(var i=0; i<vehicleNames.count; i++) {
+                vehiclePostNames += "&vehicles[]=\(vehicleNames[i])"
+            }
+        }
+        
+        ServerHelper.sendRequest(REQUEST_URL, postString:"action=SubmitRequest&school=\(school)&email=\(email)\(vehiclePostNames)&owner=\(lastName)&startTime=\(Int(startTimeStamp))&endTime=\(Int(endTimeStamp))") {
             response in
+            
+            print(response)
             
             if let error = ServerHelper.error(response) {
                 print(error)
@@ -73,13 +88,22 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
         if let nvc = segue.destinationViewController as? UINavigationController {
             if let dvc = nvc.viewControllers.first as? SelectVehicleTableViewController {
                 dvc.parent = self
+                dvc.selectedVehicles = vehicleNames
             }
         }
     }
     
-    func updateVehicle(name: String) {
-        vehicleName = name
-        vehicleNameLabel.text = "Vehicle name: \(name)"
+    func updateVehicles(vehicles: [String]) {
+        vehicleNames = vehicles
+        if vehicles.count == 1 {
+            vehicleNameLabel.text = "Vehicle name: \(vehicles[0])"
+        } else if vehicles.count > 1 {
+            var labelString = "Vehicle names: \(vehicles[0])"
+            for(var i=1; i<vehicles.count; i++) {
+                labelString += ", \(vehicles[i])"
+            }
+            vehicleNameLabel.text = labelString
+        }
         checkAddBarButton()
     }
     
@@ -98,7 +122,7 @@ class AddReservationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkAddBarButton() {
-        if(vehicleName != "") {
+        if(vehicleNames.count > 0) {
             let startTimeStamp = Int(startDatePicker.date.timeIntervalSince1970)
             let endTimeStamp = Int(endDatePicker.date.timeIntervalSince1970)
             if(startTimeStamp < endTimeStamp) {
