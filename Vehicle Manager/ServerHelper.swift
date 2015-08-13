@@ -36,7 +36,7 @@ class ServerHelper: NSObject {
             
         }
         
-        task?.resume()
+        task.resume()
     }
     
     class func getVehicles(success: ((vehiclesArray: [String]?) -> Void)) {

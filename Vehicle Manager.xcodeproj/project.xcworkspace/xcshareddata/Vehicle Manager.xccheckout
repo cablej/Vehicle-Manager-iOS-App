@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>590EEADB-A8A5-4C96-9C92-86105527435F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Vehicle Manager</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D474E1ED0C4B18C725E1CDF34EB2D4874564BFE5</key>
+		<string>https://github.com/cablej/Vehicle-Manager-iOS-App.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Vehicle Manager.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D474E1ED0C4B18C725E1CDF34EB2D4874564BFE5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cablej/Vehicle-Manager-iOS-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D474E1ED0C4B18C725E1CDF34EB2D4874564BFE5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D474E1ED0C4B18C725E1CDF34EB2D4874564BFE5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Vehicle%20Manager</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -16,8 +16,16 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nextButton: UIButton!
     
+    @IBOutlet var accessCodeTextField: UITextField!
+    
+    var requiresCode = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        accessCodeTextField.hidden = true
+        
+        checkRequiresCode()
         
         VehicleManageHelper.initializeViewController(self)
         
@@ -25,6 +33,23 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         lastNameTextField.delegate = self
         emailTextField.delegate = self
+        accessCodeTextField.delegate = self
+        
+    }
+    
+    func checkRequiresCode() {
+        ServerHelper.sendRequest(REQUEST_URL, postString:"action=RequiresCode") {
+            response in
+            if(response == "false") {
+                self.requiresCode = false
+            }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if self.requiresCode {
+                    self.accessCodeTextField.hidden = false
+                }
+            })
+        }
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -33,6 +58,26 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onNextButtonTapped(sender: AnyObject) {
+        if requiresCode {
+            ServerHelper.sendRequest(REQUEST_URL, postString:"action=SubmitCode&code=\(accessCodeTextField.text!)") {
+                response in
+                if(response == "success") {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.proceed()
+                    })
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        VehicleManageHelper.alert("Error", message: "Access code not valid.", viewController: self)
+                    })
+                }
+            }
+        } else {
+            proceed()
+        }
+        
+    }
+    
+    func proceed() {
         if lastNameTextField.text == "" || emailTextField.text == "" {
             VehicleManageHelper.alert("Please complete the required fields.", message: "Please complete the required fields.", viewController: self)
             return

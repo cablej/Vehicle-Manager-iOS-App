@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -900,13 +900,24 @@
                                     <action selector="onNextButtonTapped:" destination="rZc-dj-X31" eventType="touchUpInside" id="zDk-Ni-DCT"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="03d-xT-g4U">
+                                <rect key="frame" x="200" y="314" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="DV4-4B-X4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="i6I-aK-FT7" secondAttribute="trailing" constant="-20" id="HrF-on-u0n"/>
                             <constraint firstItem="GZK-pc-zcN" firstAttribute="centerX" secondItem="Ydd-0Z-saR" secondAttribute="centerX" id="Kdp-WL-4mC"/>
                             <constraint firstItem="i6I-aK-FT7" firstAttribute="leading" secondItem="Ydd-0Z-saR" secondAttribute="leadingMargin" constant="-20" id="L0M-go-1TR"/>
+                            <constraint firstItem="03d-xT-g4U" firstAttribute="top" secondItem="GZK-pc-zcN" secondAttribute="bottom" constant="43" id="Pxy-0M-M6O"/>
+                            <constraint firstItem="GZK-pc-zcN" firstAttribute="top" secondItem="3ba-hE-gz4" secondAttribute="bottom" constant="43" id="WCt-pS-RJZ"/>
                             <constraint firstItem="0b5-Bk-w15" firstAttribute="top" secondItem="Osy-Ta-G2D" secondAttribute="bottom" constant="16" id="YSi-gO-5DD"/>
+                            <constraint firstItem="03d-xT-g4U" firstAttribute="centerX" secondItem="Ydd-0Z-saR" secondAttribute="centerX" id="g9H-A8-rBu"/>
                             <constraint firstItem="i6I-aK-FT7" firstAttribute="centerX" secondItem="Ydd-0Z-saR" secondAttribute="centerX" id="ifF-Dh-VfK"/>
                             <constraint firstItem="3ba-hE-gz4" firstAttribute="centerX" secondItem="Ydd-0Z-saR" secondAttribute="centerX" id="jB1-ND-QDS"/>
                             <constraint firstItem="0b5-Bk-w15" firstAttribute="centerX" secondItem="Ydd-0Z-saR" secondAttribute="centerX" id="tmR-Di-mR5"/>
@@ -915,6 +926,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="District 214 Vehicle Manager" id="mZv-O7-bcl"/>
                     <connections>
+                        <outlet property="accessCodeTextField" destination="03d-xT-g4U" id="P7L-UY-8YA"/>
                         <outlet property="emailTextField" destination="GZK-pc-zcN" id="ZTD-KQ-wRx"/>
                         <outlet property="lastNameTextField" destination="3ba-hE-gz4" id="gbl-jG-sHx"/>
                         <outlet property="nextButton" destination="i6I-aK-FT7" id="bbE-hc-0U3"/>
