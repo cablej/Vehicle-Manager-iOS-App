@@ -112,8 +112,8 @@ class ReservationTableViewController: UITableViewController {
         
         cell.vehicleNameLabel.text = reservation.vehicleName
         cell.ownerNameLabel.text = reservation.owner
-        cell.startTimeLabel.text = VehicleManageHelper.formatDate(VehicleManageHelper.dateFromTimestamp(reservation.startTime))
-        cell.endTimeLabel.text = VehicleManageHelper.formatDate(VehicleManageHelper.dateFromTimestamp(reservation.endTime))
+        cell.startTimeLabel.text = ServerHelper.formatDate(ServerHelper.dateFromTimestamp(reservation.startTime))
+        cell.endTimeLabel.text = ServerHelper.formatDate(ServerHelper.dateFromTimestamp(reservation.endTime))
         
         return cell
     }

@@ -25,8 +25,6 @@ class CalenderTableViewController: UITableViewController {
         self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView!.addSubview(refreshControl!)
         
-        
-        
     }
     
     func refresh(sender:AnyObject)
@@ -38,8 +36,10 @@ class CalenderTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let nvc = segue.destinationViewController as? UINavigationController {
             if let dvc = nvc.viewControllers.first as? AddReservationViewController {
-                dvc.vehicleNames = [vehicles[tableView.indexPathForSelectedRow!.row]]
-                dvc.startDate = getDateForSection(tableView.indexPathForSelectedRow!.section)
+                let row = tableView.indexPathForSelectedRow?.row
+                let section = tableView.indexPathForSelectedRow?.section
+                dvc.vehicleNames = [vehicles[row!]]
+                dvc.startDate = ServerHelper.getDateForSection(section!)
             }
         }
     }
@@ -83,33 +83,14 @@ class CalenderTableViewController: UITableViewController {
         }
         let school = defaults.objectForKey("school") as! String
         
-        ServerHelper.sendRequest(REQUEST_URL, postString:"action=GetVehiclesReserved&school=\(school)") {
-            response in
+        ServerHelper.getReservations(school) { (reservations) in
+            self.reservations = reservations
             
-            if let error = ServerHelper.error(response) {
-                print(error)
-                return
-            }
-            
-            if let responseJSON = ServerHelper.stringToJSON(response) {
-                for reservation in responseJSON {
-                    let reservationJSON: JSON = reservation.1
-                    let reservation = Reservation(vehicleName: reservationJSON["vehicleName"].stringValue, owner: reservationJSON["owner"].stringValue, startTime: reservationJSON["startDateTime"].intValue, endTime: reservationJSON["endDateTime"].intValue)
-                    
-                    let monthDay = VehicleManageHelper.formatMonthDay(VehicleManageHelper.dateFromTimestamp( reservation.startTime))
-                    
-                    if let dayReservations = self.reservations[monthDay] {
-                         self.reservations[monthDay] = dayReservations + [reservation]
-                    } else {
-                        self.reservations[monthDay] = [reservation]
-                    }
-                }
-            }
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
-                self.refreshControl?.endRefreshing()
             })
         }
+        
     }
     
     func updateVehicles() {
@@ -127,7 +108,7 @@ class CalenderTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 90
+        return 365
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -135,7 +116,7 @@ class CalenderTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return VehicleManageHelper.formatMonthDay(getDateForSection(section))
+        return ServerHelper.formatMonthDay(ServerHelper.getDateForSection(section))
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -150,7 +131,7 @@ class CalenderTableViewController: UITableViewController {
         
         headerLabel.textColor = UIColor.whiteColor()
         headerLabel.textAlignment = NSTextAlignment.Center
-        headerLabel.text = VehicleManageHelper.formatMonthDay(getDateForSection(section))
+        headerLabel.text = ServerHelper.formatMonthDay(ServerHelper.getDateForSection(section))
         
         headerView.addSubview(headerLabel)
         
@@ -162,13 +143,13 @@ class CalenderTableViewController: UITableViewController {
         var timesTaken = "Free"
         var timeTaken = 0
         
-        if let reservationsForDay = reservations[VehicleManageHelper.formatMonthDay(getDateForSection(indexPath.section))] {
+        if let reservationsForDay = reservations[ServerHelper.formatMonthDay(ServerHelper.getDateForSection(indexPath.section))] {
             timesTaken = ""
             var hasChanged = false
             for reservation in reservationsForDay {
                 if reservation.vehicleName == vehicles[indexPath.row] {
                     hasChanged = true
-                    timesTaken += "\(reservation.owner) \(VehicleManageHelper.formatDateToTime(VehicleManageHelper.dateFromTimestamp(reservation.startTime))) - \(VehicleManageHelper.formatDateToTime(VehicleManageHelper.dateFromTimestamp(reservation.endTime)))"
+                    timesTaken += "\(reservation.owner) \(ServerHelper.formatDateToTime(ServerHelper.dateFromTimestamp(reservation.startTime))) - \(ServerHelper.formatDateToTime(ServerHelper.dateFromTimestamp(reservation.endTime)))"
                     timeTaken += reservation.endTime - reservation.startTime
                 }
             }
@@ -183,18 +164,6 @@ class CalenderTableViewController: UITableViewController {
         cell.percentageTaken.setProgress(progress, animated: true)
 
         return cell
-    }
-    
-    func getDateForSection(section: Int) -> NSDate {
-        
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        
-        let offsetComponents = NSDateComponents()
-        offsetComponents.day = section
-        let day = gregorian.dateByAddingComponents(offsetComponents, toDate: NSDate(), options: [])!
-        
-        return gregorian.startOfDayForDate(day)
-
     }
 
 }

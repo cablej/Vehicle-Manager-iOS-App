@@ -55,7 +55,7 @@ class VehiclesTableViewController: UITableViewController {
         alert.addAction(cancelAction)
         
         let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) { (action) -> Void in
-            let vehicleTextField = alert.textFields![0] as UITextField
+            let vehicleTextField = alert.textFields![0] as! UITextField
             
             if defaults.objectForKey("school") == nil {
                 return

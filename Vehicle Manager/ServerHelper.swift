@@ -40,10 +40,9 @@ class ServerHelper: NSObject {
     }
     
     class func getVehicles(success: ((vehiclesArray: [String]?) -> Void)) {
-        if defaults.objectForKey("school") == nil {
+        guard let school = NSUserDefaults.standardUserDefaults().objectForKey("school") else {
             return
         }
-        let school = defaults.objectForKey("school") as! String
         ServerHelper.sendRequest(REQUEST_URL, postString:"action=GetVehicles&school=\(school)") {
             response in
             
@@ -85,6 +84,34 @@ class ServerHelper: NSObject {
         }
     }
     
+    class func getReservations(school: String, success:((reservations: Dictionary<String, [Reservation]>) -> Void)) {
+        var reservations = Dictionary<String, [Reservation]>()
+        ServerHelper.sendRequest(REQUEST_URL, postString:"action=GetVehiclesReserved&school=\(school)") {
+            response in
+        
+            if let error = ServerHelper.error(response) {
+                print(error)
+                return
+            }
+            
+            if let responseJSON = ServerHelper.stringToJSON(response) {
+                for reservation in responseJSON {
+                    let reservationJSON: JSON = reservation.1
+                    let reservation = Reservation(vehicleName: reservationJSON["vehicleName"].stringValue, owner: reservationJSON["owner"].stringValue, startTime: reservationJSON["startDateTime"].intValue, endTime: reservationJSON["endDateTime"].intValue)
+                    
+                    let monthDay = ServerHelper.formatMonthDay(ServerHelper.dateFromTimestamp( reservation.startTime))
+                    
+                    if let dayReservations = reservations[monthDay] {
+                            reservations[monthDay] = dayReservations + [reservation]
+                    } else {
+                        reservations[monthDay] = [reservation]
+                    }
+                }
+                success(reservations: reservations)
+            }
+        }
+    }
+    
     func reservationObjectFromJSON(json: JSON) -> Reservation {
         let reservation = Reservation(vehicleName: json["vehicleName"].stringValue, owner: json["owner"].stringValue, startTime: json["startTime"].intValue, endTime: json["endTime"].intValue)
         return reservation
@@ -106,17 +133,16 @@ class ServerHelper: NSObject {
         let json : JSON
         
         do {
-            jsonObject = try NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding)!,
-                options: NSJSONReadingOptions.AllowFragments)
+            
+            try jsonObject = NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, options: NSJSONReadingOptions.MutableContainers)
+            
+            
             json = JSON(jsonObject!)
             
             return json
-            
-            
         } catch {
-            
+            return nil
         }
-        return nil;
     }
     
     class func error(response: String) -> String? {
@@ -128,6 +154,45 @@ class ServerHelper: NSObject {
             }
         }
         return nil
+    }
+    
+    class func formatMonthDay(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd"
+        
+        return dateFormatter.stringFromDate(date)
+    }
+    
+    class func dateFromTimestamp(timestamp: Int) -> NSDate {
+        return NSDate(timeIntervalSince1970: Double(timestamp))
+    }
+    
+    class func formatDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd hh:mm a"
+        
+        return dateFormatter.stringFromDate(date)
+    }
+    
+    class func formatDateToTime(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        
+        return dateFormatter.stringFromDate(date)
+    }
+    
+    
+    class func getDateForSection(section: Int) -> NSDate {
+        
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        
+        let offsetComponents = NSDateComponents()
+        offsetComponents.day = section
+        
+        let day = gregorian.dateByAddingComponents(offsetComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
+        
+        return gregorian.startOfDayForDate(day)
+        
     }
 
 }

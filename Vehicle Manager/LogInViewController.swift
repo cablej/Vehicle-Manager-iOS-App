@@ -58,7 +58,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onNextButtonTapped(sender: AnyObject) {
-        if requiresCode {
+        proceed()
+        /*if requiresCode {
             ServerHelper.sendRequest(REQUEST_URL, postString:"action=SubmitCode&code=\(accessCodeTextField.text!)") {
                 response in
                 if(response == "success") {
@@ -73,7 +74,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             proceed()
-        }
+        }*/
         
     }
     

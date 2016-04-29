@@ -14,20 +14,6 @@ var secondaryColor = UIColor(red: 42/255.0, green: 48/255.0, blue: 53/255.0, alp
 let defaults = NSUserDefaults.standardUserDefaults()
 
 class VehicleManageHelper: NSObject {
-
-    class func formatDate(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd hh:mm a"
-        
-        return dateFormatter.stringFromDate(date)
-    }
-    
-    class func formatDateToTime(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        
-        return dateFormatter.stringFromDate(date)
-    }
     
     
     class func alert(title: String, message: String, viewController: UIViewController) {
@@ -39,13 +25,6 @@ class VehicleManageHelper: NSObject {
         return
     }
     
-    class func formatMonthDay(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
-        
-        return dateFormatter.stringFromDate(date)
-    }
-    
     class func initializeViewController(viewController: UIViewController) {
         if let navigationController = viewController.navigationController {
             navigationController.navigationBar.barTintColor = primaryColor
@@ -55,8 +34,6 @@ class VehicleManageHelper: NSObject {
         }
     }
     
-    class func dateFromTimestamp(timestamp: Int) -> NSDate {
-        return NSDate(timeIntervalSince1970: Double(timestamp))
-    }
+    
     
 }
